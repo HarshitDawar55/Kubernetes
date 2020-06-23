@@ -31,3 +31,11 @@ spec:
       containers:
         - name: "wordpress-pod-1"
           image: "wordpress:4.8-apache"
+          volumeMounts:
+            - name: wordpress
+              mountPath: /wp-content/uploads
+
+      volumes:
+        - name: wordpress
+          persistentVolumeClaim:
+            claimName: wp-pvc
