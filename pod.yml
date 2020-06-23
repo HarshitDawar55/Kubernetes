@@ -1,0 +1,15 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: mypod1
+  labels:
+    env: Production
+    dc: India
+
+
+spec:
+  containers:
+    - name: "container-1"
+      image: "harshitdawar/apache-webserver-and-php:v2"
