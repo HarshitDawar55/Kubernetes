@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ReplicationController
+
+metadata:
+  name: rc1
+
+spec:
+ # Creating a selector to keep a eye using the label
+  replicas: 1
+  selector:
+    env: Production
+    dc: India
+    app: Webserver
+
+  template:
+    # We have to provide the complete code of the pod, because with that code only, new POD will be launched in case of fault.
+    metadata:
+      name: mypod1
+      labels:
+        # With this only pods are identified!
+        env: Production
+        dc: India
+        app: Webserver
+
+
+    spec:
+      containers:
+        - name: "container-1"
+          image: "harshitdawar/apache-webserver-and-php:v2"
