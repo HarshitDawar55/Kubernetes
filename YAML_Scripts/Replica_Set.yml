@@ -35,12 +35,23 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: my-secret
+                  key: rpass
+
             - name: MYSQL_DATABASE
               value: blog_database
+
             - name: MYSQL_USER
-              value: HarshitDawar
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: username
+
             - name: MYSQL_PASSWORD
-              value: Best_In_The_Universe
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: upass
+
           volumeMounts:
             - name: webserver
               mountPath: /var/lib/mysql
