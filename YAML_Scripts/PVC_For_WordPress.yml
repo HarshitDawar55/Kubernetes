@@ -4,8 +4,9 @@ apiVersion: v1
 # Specifying the kind of resource we are deploying
 kind: PersistentVolumeClaim
 
+# Specified the metadata(name of the resource in this case)!
 metadata:
-  name: mypvc
+  name: wp-pvc
 
 spec:
   accessModes:
