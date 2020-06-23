@@ -1,0 +1,23 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: mypod1
+  labels:
+    env: Production
+    dc: India
+
+
+spec:
+  containers:
+    - name: "container-1"
+      image: "vimal13/apache-webserver-php"
+      volumeMounts:
+        - name: webserver
+          mountPath: /var/www/html
+
+  volumes:
+    - name: webserver
+      persistentVolumeClaim:
+        claimName: mypvc
