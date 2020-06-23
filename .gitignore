@@ -12,3 +12,4 @@ tags.csv
 movies.csv
 .terraform*
 terraform*
+.idea*
