@@ -1,6 +1,7 @@
 # Specifying the APi Version
 apiVersion: v1
 
+# Specifying the kind of resource we are deploying
 kind: PersistentVolumeClaim
 
 metadata:
