@@ -32,7 +32,9 @@ spec:
           image: "mysql:5.6"
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: my-secret
             - name: MYSQL_DATABASE
               value: blog_database
             - name: MYSQL_USER
