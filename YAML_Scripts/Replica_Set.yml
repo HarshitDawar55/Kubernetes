@@ -1,0 +1,49 @@
+# Defining an API Version
+apiVersion: apps/v1
+
+# Defining the kind of application!
+kind: ReplicaSet
+
+# Metadata
+metadata:
+  name: rs-mysql-yml
+
+spec:
+  # Declaring the Replica which we desire
+  replicas: 1
+
+  # Writing the set based Selector (advantage of ReplicaSet over Replication Controller!)
+  selector:
+    matchLabels:
+      DataCenter: India
+
+  # Defining the structure of POD to launch!
+  template:
+    metadata:
+      name: PVC_RS_MYSQL
+      labels:
+        DataCenter: India
+        Environment: Production
+        Application: Webserver
+
+    spec:
+      containers:
+        - name: "mysql-pod-1-pvc"
+          image: "mysql:5.6"
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+            - name: MYSQL_DATABASE
+              value: blog_database
+            - name: MYSQL_USER
+              value: HarshitDawar
+            - name: MYSQL_PASSWORD
+              value: Best_In_The_Universe
+          volumeMounts:
+            - name: webserver
+              mountPath: /var/lib/mysql
+
+      volumes:
+        - name: webserver
+          persistentVolumeClaim:
+            claimName: mypvc
