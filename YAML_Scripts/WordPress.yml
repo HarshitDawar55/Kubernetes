@@ -6,7 +6,7 @@ kind: ReplicaSet
 
 # Metadata
 metadata:
-  name: replicaset-from-yml-for-wordpress
+  name: rs-wp-yml
 
 spec:
   # Declaring the Replica which we desire
@@ -14,10 +14,9 @@ spec:
 
   # Writing the set based Selector (advantage of ReplicaSet over Replication Controller!)
   selector:
-    matchExpressions:
-      - {key: DataCenter, operator: In, values: [India] }
-      - {key: Environment, operator: In, values: [ Production] }
-      - {key: Application, operator: In, values: [Webserver] }
+    matchLabels:
+      DataCenter: India
+
 
   # Defining the structure of POD to launch!
   template:
@@ -30,5 +29,5 @@ spec:
 
     spec:
       containers:
-        - name: "mysql-pod-1"
+        - name: "wordpress-pod-1"
           image: "wordpress:4.8-apache"
