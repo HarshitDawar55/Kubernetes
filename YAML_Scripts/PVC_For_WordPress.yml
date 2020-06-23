@@ -1,0 +1,14 @@
+# Specifying the APi Version
+apiVersion: v1
+
+kind: PersistentVolumeClaim
+
+metadata:
+  name: mypvc
+
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2G
