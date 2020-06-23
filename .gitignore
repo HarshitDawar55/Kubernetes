@@ -10,3 +10,4 @@ moviedataset.zip
 ratings.csv
 tags.csv
 movies.csv
+.terraform*
