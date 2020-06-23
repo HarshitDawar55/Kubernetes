@@ -8,9 +8,13 @@ kind: PersistentVolumeClaim
 metadata:
   name: wp-pvc
 
+# Specification of the container starts here
 spec:
+  # Specifying the Access Modes!
   accessModes:
     - ReadWriteOnce
+
+  # Specifying the resources!
   resources:
     requests:
       storage: 2G
