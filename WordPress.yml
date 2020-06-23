@@ -1,0 +1,34 @@
+# Defining an API Version
+apiVersion: apps/v1
+
+# Defining the kind of application!
+kind: ReplicaSet
+
+# Metadata
+metadata:
+  name: replicaset-from-yml-for-wordpress
+
+spec:
+  # Declaring the Replica which we desire
+  replicas: 1
+
+  # Writing the set based Selector (advantage of ReplicaSet over Replication Controller!)
+  selector:
+    matchExpressions:
+      - {key: DataCenter, operator: In, values: [India] }
+      - {key: Environment, operator: In, values: [ Production] }
+      - {key: Application, operator: In, values: [Webserver] }
+
+  # Defining the structure of POD to launch!
+  template:
+    metadata:
+      name: wordpress
+      labels:
+        DataCenter: India
+        Environment: Production
+        Application: Webserver
+
+    spec:
+      containers:
+        - name: "mysql-pod-1"
+          image: "wordpress:4.8-apache"
