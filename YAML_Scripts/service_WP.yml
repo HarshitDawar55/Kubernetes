@@ -1,0 +1,20 @@
+# This is the file which creates a service of Load Balancer behaviour!
+
+# Specifying the API Version
+apiVersion: v1
+
+# Specifying the Kind of the service
+kind: Service
+
+# Specifying the Metadata
+metadata:
+  name: LB-For-MySQL    # It is for WordPress as it uses NodePort which provides external connectivity.
+
+spec:
+  selector:
+    dc: INDIA
+  type: NodePort
+  ports:
+    - port: 8080
+      nodePort: 35000
+      targetPort: 80
