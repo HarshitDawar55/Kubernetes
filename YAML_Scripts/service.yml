@@ -13,3 +13,4 @@ metadata:
 spec:
   selector:
     dc: INDIA
+  type: ClusterIP
