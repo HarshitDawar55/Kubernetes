@@ -8,12 +8,12 @@ kind: Service
 
 # Specifying the Metadata
 metadata:
-  name: LB-For-MySQL    # It is for MySQL because the service type used here is clusterIP which does not external connectivity,
+  name: lb-for-mysql    # It is for MySQL because the service type used here is clusterIP which does not external connectivity,
   # & it is safe for our database.
 
 spec:
   selector:
-    dc: INDIA
+    Application: WordPress
   type: ClusterIP
   ports:
     - port: 8080
