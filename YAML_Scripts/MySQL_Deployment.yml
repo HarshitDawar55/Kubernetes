@@ -81,7 +81,7 @@ metadata:
   # Name of the Deployment
   name: mysql-for-wordpress
 
-  #
+  # Labels for the wordpress
   labels:
     app: wordpress
 spec:
