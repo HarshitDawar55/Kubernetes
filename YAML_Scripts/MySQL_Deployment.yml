@@ -31,6 +31,8 @@ metadata:
   # Labels attached to PVC
   labels:
     app: wordpress
+
+# Specifying the Specifications of the PVC
 spec:
   accessModes:
     - ReadWriteOnce
