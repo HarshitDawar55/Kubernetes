@@ -8,13 +8,13 @@ kind: Service
 
 # Specifying the Metadata
 metadata:
-  name: LB-For-MySQL    # It is for WordPress as it uses NodePort which provides external connectivity.
+  name: lb-for-wp   # It is for WordPress as it uses NodePort which provides external connectivity.
 
 spec:
   selector:
-    dc: INDIA
+    Application: FrontEnd
   type: NodePort
   ports:
-    - port: 8080
-      nodePort: 35000
+    - port: 8081
+      nodePort: 32000
       targetPort: 80
