@@ -84,6 +84,8 @@ metadata:
   # Labels for the Deployment
   labels:
     app: wordpress
+
+# Specifications of the Deployment Begin
 spec:
   selector:
     matchLabels:
