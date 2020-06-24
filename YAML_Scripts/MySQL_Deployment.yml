@@ -25,7 +25,10 @@ kind: PersistentVolumeClaim
 
 # Specifying Metadata
 metadata:
-  name: mysql-pv-claim
+  # Name of the PVC
+  name: claim-mysql-pv
+
+  # Labels attached to PVC
   labels:
     app: wordpress
 spec:
