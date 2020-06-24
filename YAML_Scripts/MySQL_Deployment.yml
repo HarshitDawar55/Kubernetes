@@ -87,12 +87,18 @@ metadata:
 
 # Specifications of the Deployment Begin
 spec:
+
+  # Selectors for the MySQL POD
   selector:
     matchLabels:
       app: wordpress
-      tier: mysql
+      resource-name: mysql
+
+  # Specifying the strategy for the Deployment
   strategy:
     type: Recreate
+
+
   template:
     metadata:
       labels:
