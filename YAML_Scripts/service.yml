@@ -4,3 +4,4 @@
 apiVersion: v1
 
 # Specifying the Kind of the service
+kind: Service
