@@ -10,7 +10,7 @@ metadata:
 
 spec:
   # Declaring the Replica which we desire
-  replicas: 1
+  replicas: 3
 
   # Writing the set based Selector (advantage of ReplicaSet over Replication Controller!)
   selector:
@@ -25,7 +25,7 @@ spec:
       labels:
         DataCenter: India
         Environment: Production
-        Application: Webserver
+        Application: FrontEnd
 
     spec:
       containers:
