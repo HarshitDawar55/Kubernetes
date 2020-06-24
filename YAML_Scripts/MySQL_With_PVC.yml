@@ -24,7 +24,7 @@ spec:
       labels:
         DataCenter: India
         Environment: Production
-        Application: Webserver
+        Application: WordPress
 
     spec:
       containers:
