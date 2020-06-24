@@ -1,0 +1,6 @@
+# This is the file which creates a service of Load Balancer behaviour!
+
+# Specifying the API Version
+apiVersion: v1
+
+# Specifying the Kind of the service
