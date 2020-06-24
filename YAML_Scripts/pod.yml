@@ -12,4 +12,4 @@ metadata:
 spec:
   containers:
     - name: "container-1"
-      image: "harshitdawar/apache-webserver-and-php:v2"
+      image: "vimal13/apache-webserver-php"
