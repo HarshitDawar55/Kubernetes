@@ -14,3 +14,6 @@ spec:
   selector:
     dc: INDIA
   type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 80
