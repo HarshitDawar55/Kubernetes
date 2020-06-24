@@ -10,8 +10,12 @@ kind: Service
 metadata:
   # Name of the Service
   name: wordpress-mysql
+
+  # Labels attached to Service
   labels:
     app: wordpress
+
+
 spec:
   ports:
     - port: 3306
