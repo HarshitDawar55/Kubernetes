@@ -25,7 +25,11 @@ spec:
   # Providing the selectors for the Service
   selector:
     app: wordpress
-    tier: mysql
+    resource-name: mysql
+
+  # Here I am assigning None to clusterIP because I don't want that WordPress connects to MySQL service by IP, because
+    # it will change when the POD restarts, therefore a name to this service has been given in the metadata from which
+    # WP identifies the MYSQL and connects to it!
   clusterIP: None
 ---
 
