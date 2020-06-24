@@ -17,8 +17,12 @@ metadata:
 
 # Specifying the specifications of the Service
 spec:
+
+  # Providing the port number on which MySQL works by Default
   ports:
     - port: 3306
+
+  # Providing the selectors for the Service
   selector:
     app: wordpress
     tier: mysql
@@ -51,7 +55,7 @@ spec:
   accessModes:
     - ReadWriteOnce
 
-  # Speciying the resources of the PVC
+  # Specifying the resources of the PVC
   resources:
     requests:
       storage: 1Gi
