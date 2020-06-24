@@ -20,7 +20,7 @@ spec:
 # Specified the API Version
 apiVersion: v1
 
-
+# Specifying the kind of the resource!
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
