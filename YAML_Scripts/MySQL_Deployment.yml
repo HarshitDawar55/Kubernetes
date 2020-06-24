@@ -8,6 +8,7 @@ kind: Service
 
 # Specifying Metadata
 metadata:
+  # Name of the Service
   name: wordpress-mysql
   labels:
     app: wordpress
