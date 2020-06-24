@@ -77,7 +77,11 @@ kind: Deployment
 
 # Specifying Metadata
 metadata:
-  name: wordpress-mysql
+
+  # Name of the Deployment
+  name: mysql-for-wordpress
+
+  #
   labels:
     app: wordpress
 spec:
