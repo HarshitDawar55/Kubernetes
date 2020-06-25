@@ -31,7 +31,7 @@ spec:
 
 
 
-# Creating an PVC for the M
+# Creating an PVC for the WordPress
 
 # Specified the API Version
 apiVersion: v1
