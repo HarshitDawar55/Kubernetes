@@ -26,16 +26,12 @@ spec:
   selector:
     app: wordpress
     resource-name: frontend
-
-  # Here I am assigning None to clusterIP because I don't want that WordPress connects to MySQL service by IP, because
-    # it will change when the POD restarts, therefore a name to this service has been given in the metadata from which
-    # WP identifies the MYSQL and connects to it!
   type: LoadBalancer
 ---
 
 
 
-# Creating an PVC for the MySQL
+# Creating an PVC for the M
 
 # Specified the API Version
 apiVersion: v1
