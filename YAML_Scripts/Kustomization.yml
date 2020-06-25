@@ -2,11 +2,16 @@
 
 # Specifying the API Version
 apiVersion: kustomize.config.k8s.io/v1beta1
+
+# Specifying the type of resource@
 kind: Kustomization
-secretGenerator:
-- name: mysql-pass
-  literals:
-  - password=redhat
+
+#secretGenerator:
+#- name: mysql-pass
+#  literals:
+#  - password=redhat
+
+# Defining the
 resources:
   - mysql-deployment.yaml
   - wordpress-deployment.yaml
