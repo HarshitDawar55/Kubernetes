@@ -75,7 +75,7 @@ kind: Deployment
 metadata:
 
   # Name of the Deployment
-  name: mysql-for-wordpress
+  name: wordpress
 
   # Labels for the Deployment
   labels:
@@ -84,11 +84,11 @@ metadata:
 # Specifications of the Deployment Begin
 spec:
 
-  # Selectors for the MySQL POD
+  # Selectors for the WordPress POD
   selector:
     matchLabels:
       app: wordpress
-      resource-name: mysql
+      resource-name: frontend
 
   # Specifying the strategy for the Deployment
   strategy:
