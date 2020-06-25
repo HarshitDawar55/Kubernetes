@@ -60,8 +60,6 @@ spec:
       storage: 1Gi
 ---
 
-
-
 # Creating an WordPress Deployment
 
 # Specifying the api Version
