@@ -11,7 +11,7 @@ kind: Kustomization
 #  literals:
 #  - password=redhat
 
-# Defining the
+# Defining the files/resources to execute
 resources:
   - mysql-deployment.yaml
   - wordpress-deployment.yaml
