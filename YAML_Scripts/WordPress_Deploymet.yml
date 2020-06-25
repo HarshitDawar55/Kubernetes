@@ -63,7 +63,7 @@ spec:
 
 
 
-# Creating an MySQl Deployment
+# Creating an WordPress Deployment
 
 # Specifying the api Version
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
