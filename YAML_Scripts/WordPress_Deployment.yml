@@ -48,6 +48,8 @@ spec:
       - image: wordpress:4.8-apache
         name: wordpress
         env:
+          # Configuring the MySQL Db Host, by this a Default database will be
+          # created with the name of WordPress!
         - name: WORDPRESS_DB_HOST
           value: wordpress-mysql
         - name: WORDPRESS_DB_PASSWORD
