@@ -1,0 +1,12 @@
+# Creating an kustomization file which will run all other file in a sequence!
+
+# Specifying the API Version
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+secretGenerator:
+- name: mysql-pass
+  literals:
+  - password=redhat
+resources:
+  - mysql-deployment.yaml
+  - wordpress-deployment.yaml
