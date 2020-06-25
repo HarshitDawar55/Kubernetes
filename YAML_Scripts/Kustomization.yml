@@ -13,5 +13,6 @@ kind: Kustomization
 
 # Defining the files/resources to execute
 resources:
-  - mysql-deployment.yaml
-  - wordpress-deployment.yaml
+  - Secret.yml
+  - MySQL_Deployment.yml
+  - WordPress_Deployment.yml
