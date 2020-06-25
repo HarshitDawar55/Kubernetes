@@ -18,7 +18,7 @@ metadata:
 # Specifying the specifications of the Service
 spec:
 
-  # Providing the port number on which MySQL works by Default
+  # Providing the port number on which WordPress works by Default
   ports:
     - port: 80
 
