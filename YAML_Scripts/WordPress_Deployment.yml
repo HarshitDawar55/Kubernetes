@@ -1,127 +1,67 @@
-# Creating an Load Balancer Service for WordPress
-
-# Specifying the API Version
 apiVersion: v1
-
-# Specifying the kind of the resource!
 kind: Service
-
-# Specifying Metadata
 metadata:
-  # Name of the Service
   name: wordpress
-
-  # Labels attached to Service
   labels:
     app: wordpress
-
-# Specifying the specifications of the Service
 spec:
-
-  # Providing the port number on which WordPress works by Default
   ports:
     - port: 80
-
-  # Providing the selectors for the Service
   selector:
     app: wordpress
-    resource-name: frontend
+    tier: frontend
   type: LoadBalancer
 ---
-
-
-
-# Creating an PVC for the WordPress
-
-# Specified the API Version
 apiVersion: v1
-
-# Specifying the kind of the resource!
 kind: PersistentVolumeClaim
-
-# Specifying Metadata
 metadata:
-  # Name of the PVC
   name: claim-wp-pv
-
-  # Labels attached to PVC
   labels:
     app: wordpress
-
-# Specifying the Specifications of the PVC
 spec:
-  # Specifying the Access Mode
   accessModes:
     - ReadWriteOnce
-
-  # Specifying the resources of the PVC
   resources:
     requests:
       storage: 1Gi
 ---
-
-# Creating an WordPress Deployment
-
-# Specifying the api Version
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
-
-# Specifying the kind of the resource!
 kind: Deployment
-
-# Specifying Metadata
 metadata:
-
-  # Name of the Deployment
   name: wordpress
-
-  # Labels for the Deployment
   labels:
     app: wordpress
-
-# Specifications of the Deployment Begin
 spec:
-
-  # Selectors for the WordPress POD
   selector:
     matchLabels:
       app: wordpress
-      resource-name: frontend
-
-  # Specifying the strategy for the Deployment
+      tier: frontend
   strategy:
     type: Recreate
-
-  # Specifying the POD Configuration to launch
   template:
     metadata:
       labels:
         app: wordpress
-        resource-name: frontend
+        tier: frontend
     spec:
       containers:
-        - image: wordpress:4.8-apache
+      - image: wordpress:4.8-apache
+        name: wordpress
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: wordpress-mysql
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: rpass
+        ports:
+        - containerPort: 80
           name: wordpress
-          env:
-            # Specifying the Database host of the WordPress
-            - name: WORDPRESS_DB_HOST
-              value: wordpress-mysql
-            - name: WORDPRESS_DB_PASSWORD
-              valueFrom:
-                # Passing password from the secret
-                secretKeyRef:
-                  name: my-secret
-                  key: password
-          ports:
-            - containerPort: 80
-              name: wordpress
-          volumeMounts:
-            # Adding the mount path of the volume!
-            - name: wordpress-persistent-storage
-              mountPath: /var/www/html
-
-        # Adding information to claim the external volume from the PVC!
-        volumes:
-          - name: wordpress-persistent-storage
-            persistentVolumeClaim:
-              claimName: claim-wp-pv
-
+        volumeMounts:
+        - name: wordpress-persistent-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: wordpress-persistent-storage
+        persistentVolumeClaim:
+          claimName: claim-wp-pv
