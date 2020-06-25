@@ -1,0 +1,126 @@
+# Creating an Load Balancer Service for WordPress
+
+# Specifying the API Version
+apiVersion: v1
+
+# Specifying the kind of the resource!
+kind: Service
+
+# Specifying Metadata
+metadata:
+  # Name of the Service
+  name: wordpress-mysql
+
+  # Labels attached to Service
+  labels:
+    app: wordpress
+
+# Specifying the specifications of the Service
+spec:
+
+  # Providing the port number on which MySQL works by Default
+  ports:
+    - port: 3306
+
+  # Providing the selectors for the Service
+  selector:
+    app: wordpress
+    resource-name: mysql
+
+  # Here I am assigning None to clusterIP because I don't want that WordPress connects to MySQL service by IP, because
+    # it will change when the POD restarts, therefore a name to this service has been given in the metadata from which
+    # WP identifies the MYSQL and connects to it!
+  clusterIP: None
+---
+
+
+
+# Creating an PVC for the MySQL
+
+# Specified the API Version
+apiVersion: v1
+
+# Specifying the kind of the resource!
+kind: PersistentVolumeClaim
+
+# Specifying Metadata
+metadata:
+  # Name of the PVC
+  name: claim-mysql-pv
+
+  # Labels attached to PVC
+  labels:
+    app: wordpress
+
+# Specifying the Specifications of the PVC
+spec:
+
+  # Specifying the Access Mode
+  accessModes:
+    - ReadWriteOnce
+
+  # Specifying the resources of the PVC
+  resources:
+    requests:
+      storage: 1Gi
+---
+
+
+
+# Creating an MySQl Deployment
+
+# Specifying the api Version
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+
+# Specifying the kind of the resource!
+kind: Deployment
+
+# Specifying Metadata
+metadata:
+
+  # Name of the Deployment
+  name: mysql-for-wordpress
+
+  # Labels for the Deployment
+  labels:
+    app: wordpress
+
+# Specifications of the Deployment Begin
+spec:
+
+  # Selectors for the MySQL POD
+  selector:
+    matchLabels:
+      app: wordpress
+      resource-name: mysql
+
+  # Specifying the strategy for the Deployment
+  strategy:
+    type: Recreate
+
+  # Specifying the POD Configuration to launch
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        resource-name: mysql
+    spec:
+      containers:
+      - image: mysql:5.6
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: rpass
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: claim-mysql-pv
