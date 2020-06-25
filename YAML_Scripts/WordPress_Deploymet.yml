@@ -9,7 +9,7 @@ kind: Service
 # Specifying Metadata
 metadata:
   # Name of the Service
-  name: wordpress-mysql
+  name: wordpress
 
   # Labels attached to Service
   labels:
