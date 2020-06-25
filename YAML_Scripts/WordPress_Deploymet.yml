@@ -99,24 +99,32 @@ spec:
     metadata:
       labels:
         app: wordpress
-        resource-name: mysql
+        resource-name: frontend
     spec:
       containers:
-      - image: mysql:5.6
-        name: mysql
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: my-secret
-              key: rpass
-        ports:
-        - containerPort: 3306
-          name: mysql
-        volumeMounts:
-        - name: mysql-persistent-storage
-          mountPath: /var/lib/mysql
-      volumes:
-      - name: mysql-persistent-storage
-        persistentVolumeClaim:
-          claimName: claim-mysql-pv
+        - image: wordpress:4.8-apache
+          name: wordpress
+          env:
+            # Specifying the Database host of the WordPress
+            - name: WORDPRESS_DB_HOST
+              value: wordpress-mysql
+            - name: WORDPRESS_DB_PASSWORD
+              valueFrom:
+                # Passing password from the secret
+                secretKeyRef:
+                  name: my-secret
+                  key: password
+          ports:
+            - containerPort: 80
+              name: wordpress
+          volumeMounts:
+            # Adding the mount path of the volume!
+            - name: wordpress-persistent-storage
+              mountPath: /var/www/html
+
+        # Adding information to claim the external volume from the PVC!
+        volumes:
+          - name: wordpress-persistent-storage
+            persistentVolumeClaim:
+              claimName: claim-wp-pv
+
