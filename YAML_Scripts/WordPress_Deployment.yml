@@ -50,7 +50,6 @@ metadata:
 
 # Specifying the Specifications of the PVC
 spec:
-
   # Specifying the Access Mode
   accessModes:
     - ReadWriteOnce
