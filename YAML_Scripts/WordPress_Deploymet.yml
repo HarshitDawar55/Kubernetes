@@ -42,7 +42,7 @@ kind: PersistentVolumeClaim
 # Specifying Metadata
 metadata:
   # Name of the PVC
-  name: claim-mysql-pv
+  name: claim-wp-pv
 
   # Labels attached to PVC
   labels:
