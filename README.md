@@ -22,3 +22,5 @@
 
   * There is a requirement for this software to work & that is there should be VirtualBox present in the host system of the Kuberenetes or base system on which Kubernetes has to be installed.
   * In detail explanation of the pre-requisites & all other things for the installation is listed in the link given above.
+
+* After installing the minikube software, run the command "minikube start" to start the single node Kubernetes cluster.
