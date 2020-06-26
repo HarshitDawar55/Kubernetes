@@ -14,4 +14,4 @@
 
 * Once your minikube software is running then you have to just run the command "kubectl create -f <yaml script name>".
 
-**Note: YAML is equivalent to YML, therefore don't be confused between them!**
+**Note: YAML is equivalent to YML, therefore don't be confused  between them!**
