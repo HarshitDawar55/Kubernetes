@@ -34,7 +34,11 @@
 
 # Some of the general command for breaking the ice with the Kubernetes cluster!
 
+* Command to check all the running PODS in the cluster: "kubectl get pods".
 
+* Command to check all the running Replication Controller in the cluster: "kubectl get rc".
+
+* 
 
 
 # License of this Repository!
