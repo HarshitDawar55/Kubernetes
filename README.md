@@ -31,6 +31,8 @@
 
 * To stop the Kubernetes cluster run the command **"minikube stop"**.
 
+**Note: Minikube by default uses <i>Docker</i> as the container, although Kubernetes has the support for many other containerization tools! **
+
 
 # Some of the general command for breaking the ice with the Kubernetes cluster!
 
