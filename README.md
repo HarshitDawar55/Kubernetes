@@ -30,3 +30,5 @@
 * Now using "kubectl" command, Kubernetes cluster is accessible, information regarding the same is also been listed in the link provided above for installation of Kubernetes.
 
 * To stop the Kubernetes cluster run the command "minikube stop".
+
+# License for the Repository!
