@@ -12,4 +12,4 @@
 
 - It is a very advanced tool which is used for the management of the container, whether the container might be using any tool like Docker, Podman, CRI-O, rocket, etc.
 
--
+- In Technical terms Kubernetes is also known as the container cluster orchestration tool, which means that it is used to manage the complete cluster of container with various resources and services.
