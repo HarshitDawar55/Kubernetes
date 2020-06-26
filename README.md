@@ -1,4 +1,4 @@
-![Kubernetes](kube_Image.png)
+![Kubernetes](Images/kube_Image.png)
 
 # Kubernetes
 
