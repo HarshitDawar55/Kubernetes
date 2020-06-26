@@ -1,3 +1,5 @@
+![Kubernetes](kube_Image.png)
+
 # Kubernetes
 
 :sparkles::fireworks::tada: Important points about this Repository!!!!! :tada::fireworks::sparkles:
@@ -10,4 +12,4 @@
 
 - It is a very advanced tool which is used for the management of the container, whether the container might be using any tool like Docker, Podman, CRI-O, rocket, etc.
 
-- 
+-
