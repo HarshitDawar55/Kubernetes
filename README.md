@@ -34,9 +34,9 @@
 
 # Some of the general command for breaking the ice with the Kubernetes cluster!
 
-* Command to check all the running PODS in the cluster: "kubectl get pods".
+* Command to check all the PODS running in the cluster: "kubectl get pods".
 
-* Command to check all the running PODS with their labels in the cluster: "kubectl get pods --show-labels".
+* Command to delete all the PODS running in the cluster: "kubectl delete pods --all".
 
 * Command to check all the running PODS in the cluster: "kubectl get pods".
 
