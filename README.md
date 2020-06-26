@@ -38,7 +38,7 @@
 
 * Command to delete all the PODS running in the cluster: "kubectl delete pods --all".
 
-* Command to check all the running PODS in the cluster: "kubectl get pods".
+* Command to check all the running PODS in the cluster: **"kubectl get pods"**.
 
 * Command to check all the running Replication Controller in the cluster: "kubectl get rc".
 
