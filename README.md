@@ -38,11 +38,17 @@
 
 * Command to check all the running PODS with their labels in the cluster: "kubectl get pods --show-labels".
 
+* Command to check all the running PODS in the cluster: "kubectl get pods".
+
 * Command to check all the running Replication Controller in the cluster: "kubectl get rc".
 
 * Command to check all the running Replica Set in the cluster: "kubectl get rs".
 
-* Command to check all the running PODS win the cluster: "kubectl get pods".
+* Command to check all the running PVC win the cluster: "kubectl get pvc".
+
+* Command to check all the running PV in the cluster: "kubectl get pv".
+
+* Command to delete most of the running services in the cluster: "kubectl deleta all --all".
 
 
 # License of this Repository!
