@@ -18,4 +18,5 @@
 * First of all, to clarify the meaning of single node cluster, it is referred to a scenario in which a node act as a master node & simaltaneously it acts as a worker node also.
 
 * To install kubernetes, download the software named as "minikube".
-  * 
+  * Link for the complete guide for the installation of the software: https://kubernetes.io/docs/tasks/tools/install-minikube/
+   
