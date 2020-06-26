@@ -19,4 +19,6 @@
 
 * To install kubernetes, download the software named as "minikube".
   * Link for the complete guide for the installation of the software: https://kubernetes.io/docs/tasks/tools/install-minikube/
-   
+
+  * There is a requirement for this software to work & that is there should be VirtualBox present in the host system of the Kuberenetes or base system on which Kubernetes has to be installed.
+  * In detail explanation of the pre-requisites & all other things for the installation is listed in the link given above.
