@@ -25,6 +25,6 @@
 
 * After installing the minikube software, run the command "minikube start" to start the single node Kubernetes cluster.
 
-* To check the IP of the cluster master node, run the command "minikube ip".
+* To check the IP of the cluster master node, run the command "minikube ip". By default the Ip of the Kubernetes cluster is 192.168.99.100 !
 
-* 
+* Now using "kubectl" command, Kubernetes cluster is accessible, information regarding the same is also been listed in the link provided above for installation of Kubernetes.
