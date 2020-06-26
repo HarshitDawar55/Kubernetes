@@ -13,3 +13,5 @@
 * To run this script, you should have the minikube working, which I explained in the Readme file of this Kubernetes Repository! If you missed then here is the link [Major Readme file](../README.md)
 
 * Once your minikube software is running then you have to just run the command "kubectl create -f <yaml script name>".
+
+**Note: YAML is equivalent to YML, therefore don't be confused between them!**
