@@ -40,9 +40,9 @@
 
 * Command to check all the running PODS in the cluster: **"kubectl get pods"**.
 
-* Command to check all the running Replication Controller in the cluster: "kubectl get rc".
+* Command to check all the running Replication Controller in the cluster: **"kubectl get rc"**.
 
-* Command to check all the running Replica Set in the cluster: "kubectl get rs".
+* Command to check all the running Replica Set in the cluster: **"kubectl get rs"**.
 
 * Command to check all the running PVC win the cluster: "kubectl get pvc".
 
