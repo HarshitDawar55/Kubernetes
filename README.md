@@ -28,3 +28,5 @@
 * To check the IP of the cluster master node, run the command "minikube ip". By default the Ip of the Kubernetes cluster is 192.168.99.100 !
 
 * Now using "kubectl" command, Kubernetes cluster is accessible, information regarding the same is also been listed in the link provided above for installation of Kubernetes.
+
+* To stop the Kubernetes cluster run the command "minikube stop".
