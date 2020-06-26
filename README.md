@@ -48,7 +48,7 @@
 
 * Command to check all the running PV in the cluster: "kubectl get pv".
 
-* Command to delete most of the running services in the cluster: "kubectl deleta all --all".
+* Command to delete most of the running services in the cluster: "kubectl delete all --all".
 
 
 # License of this Repository!
