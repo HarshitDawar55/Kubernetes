@@ -31,5 +31,11 @@
 
 * To stop the Kubernetes cluster run the command "minikube stop".
 
+
+# Some of the general command for breaking the ice with the Kubernetes cluster!
+
+
+
+
 # License of this Repository!
 To check out the License for this Repository please visit [License](https://github.com/HarshitDawar55/Kubernetes/blob/master/LICENSE)
