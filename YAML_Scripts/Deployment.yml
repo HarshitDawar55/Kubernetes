@@ -22,4 +22,4 @@ spec:
     spec:
       containers:
         - name: "container-1"
-          image: "harshitdawar/kubernetes_deployment_test:v1"
+          image: "harshitdawar/kubernetes_deployment_test:v3"
