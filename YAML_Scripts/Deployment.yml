@@ -1,0 +1,25 @@
+# Specifying the API Version
+apiVersion: apps/v1
+
+# Specifying the kind of the resource
+kind: Deployment
+
+# Specifying the Metadata
+metadata:
+  name: dep-test
+
+# Specifying the spec of deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      DataCenter: Production
+    template:
+      metadata:
+        name: dep-pod
+        labels:
+          DataCenter: Production
+      spec:
+        containers:
+          - name: "container-1"
+            image: "harshitdawar/kubernetes_deployment_test:v1"
