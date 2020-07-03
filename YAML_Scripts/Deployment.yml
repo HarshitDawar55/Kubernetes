@@ -14,12 +14,12 @@ spec:
   selector:
     matchLabels:
       DataCenter: Production
-    template:
-      metadata:
-        name: dep-pod
-        labels:
-          DataCenter: Production
-      spec:
-        containers:
-          - name: "container-1"
-            image: "harshitdawar/kubernetes_deployment_test:v1"
+  template:
+    metadata:
+      name: dep-pod
+      labels:
+        DataCenter: Production
+    spec:
+      containers:
+        - name: "container-1"
+          image: "harshitdawar/kubernetes_deployment_test:v1"
